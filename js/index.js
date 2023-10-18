@@ -1,4 +1,4 @@
-// JavaScript Documen
+// JavaScript Document
 
 var lineCtr = 0;
 
@@ -7,7 +7,7 @@ function addErrorMessage(msg) {
   //   var errorDiv = U.$("errorDiv");
   // var errorSpan = U.$("error");
   var errorDiv = document.getElementById("errorDiv");
-  var errorSpan = document.getElementById("errorSpan");
+  var errorSpan = document.getElementById("error");
 
   if (errorSpan) {
     //alert(errorSpan.innerHTML)
@@ -24,7 +24,7 @@ function addErrorMessage(msg) {
 function removeErrorMessage() {
   "use strict";
   //   var errorSpan = U.$("error");
-  var errorSpan = document.getElementById("errorSpan");
+  var errorSpan = document.getElementById("error");
   if (errorSpan) {
     errorSpan.parentNode.removeChild(errorSpan);
   }
@@ -154,11 +154,19 @@ function clearIT() {
     document.getElementById("price" + i).innerHTML = "--------------------";
     document.getElementById("expense" + i).value = 0;
   }
-  document.getElementById("totalExpense").innerHTML = "--------------------";
-  document.getElementById("GPM").innerHTML = "--------------------";
-  document.getElementById("GPW").innerHTML = "--------------------";
-  // document.getElementById('totalPrice').value  = 0
-  // document.getElementById('totalWindows').value  = 0
+  if (document.getElementById("totalExpense")) {
+    document.getElementById("totalExpense").innerHTML = "--------------------";
+  }
+  if (document.getElementById("GPM")) {
+    document.getElementById("GPM").innerHTML = "--------------------";
+  }
+  if (document.getElementById("GPW")) {
+    document.getElementById("GPW").innerHTML = "--------------------";
+  }
+  // document.getElementById("GPM").innerHTML = "--------------------";
+  // document.getElementById("GPW").innerHTML = "--------------------";
+  document.getElementById("totalPrice").value = 0;
+  document.getElementById("totalWindows").value = 0;
 
   removeErrorMessage();
 }
